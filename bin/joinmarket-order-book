@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.expand_path("../../lib", __FILE__)
+require 'joinmarket_bot'
+
+order_book = JoinmarketBot::OrderBook.new
+p order_book.offers.map(&:to_json)

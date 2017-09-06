@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+$:.unshift File.expand_path("../../lib", __FILE__)
+require 'joinmarket_bot'
+
+offer_type = ARGV[0]
+raise("Offer type argument required. One of: [reloffer, absoffer]") if offer_type.blank?
+JoinmarketBot::OrderBook.new.market_depth(offer_type)
